@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feira Digital de Trocas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Feira Digital de Trocas</h1>
+    <p>Cadastre, reserve e organize itens para troca ou doação.</p>
+</header>
+
+<main>
+
+    <section class="formulario">
+
+        <h2>Cadastrar Item</h2>
+
+        <form id="formItem">
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Nome do Item"
+                required
+            >
+
+            <select id="categoria" required>
+                <option value="">Selecione uma categoria</option>
+                <option>Eletrônicos</option>
+                <option>Livros</option>
+                <option>Roupas</option>
+                <option>Brinquedos</option>
+                <option>Outros</option>
+            </select>
+
+            <select id="estado">
+                <option>Novo</option>
+                <option>Bom</option>
+                <option>Usado</option>
+            </select>
+
+            <select id="tipo" required>
+                <option value="">Tipo</option>
+                <option value="Troca">Troca</option>
+                <option value="Doação">Doação</option>
+            </select>
+
+            <textarea
+                id="descricao"
+                placeholder="Descrição do item"
+                rows="4"
+            ></textarea>
+
+            <input
+                type="text"
+                id="responsavel"
+                placeholder="Responsável"
+            >
+
+            <button type="submit">
+                Cadastrar Item
+            </button>
+
+        </form>
+
+        <div id="mensagem"></div>
+
+    </section>
+
+    <section class="filtros">
+
+        <input
+            type="text"
+            id="pesquisa"
+            placeholder="Pesquisar item..."
+        >
+
+        <select id="filtroCategoria">
+            <option value="Todos">Todas Categorias</option>
+            <option>Eletrônicos</option>
+            <option>Livros</option>
+            <option>Roupas</option>
+            <option>Brinquedos</option>
+            <option>Outros</option>
+        </select>
+
+        <select id="filtroSituacao">
+            <option value="Todos">Todas Situações</option>
+            <option value="Disponível">Disponível</option>
+            <option value="Reservado">Reservado</option>
+        </select>
+
+        <select id="filtroTipo">
+            <option value="Todos">Todos os Tipos</option>
+            <option value="Troca">Troca</option>
+            <option value="Doação">Doação</option>
+        </select>
+
+    </section>
+
+    <section class="resumo">
+
+        <div class="boxResumo">
+            <h3>Total</h3>
+            <span id="totalItens">0</span>
+        </div>
+
+        <div class="boxResumo">
+            <h3>Disponíveis</h3>
+            <span id="totalDisponiveis">0</span>
+        </div>
+
+        <div class="boxResumo">
+            <h3>Reservados</h3>
+            <span id="totalReservados">0</span>
+        </div>
+
+        <div class="boxResumo">
+            <h3>Doações</h3>
+            <span id="totalDoacoes">0</span>
+        </div>
+
+    </section>
+
+    <section id="listaItens"></section>
+
+    <p id="semResultado" class="oculto">
+        Nenhum item encontrado.
+    </p>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
